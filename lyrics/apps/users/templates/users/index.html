@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Log_Reg Assignment</title>
+</head>
+
+<body>
+    <!-- {{ messages }} -->
+    {% if messages %}
+    <ul>
+        {% for msg in messages %}
+        <li>{{msg.message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %} 
+    {{ errors }} 
+    {% if errors %}
+    <ul>
+        {% for err in errors %}
+        <li>{{err.error}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="container">
+        <h1>Welcome!</h1>
+        <fieldset>
+            <legend>Register</legend>
+            <form action="/register" method="POST">
+                {%csrf_token%}
+                <p>Name: </p> <input type="text" name="name">
+                <p>User Alias : </p> <input type="text" name="alias">
+                <p>Email: </p> <input type="text" name="email">
+                <p>Password: </p> <input type="text" name="password">
+                <h6>* password should be at least 8 characters</h6>
+                Confirm PW: <input type="text" name="password_confirm"><br>
+                <p>Date of Birth:</p> <input type="date" name="dob">
+                <button type="submit">Register</button>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Log In</legend>
+            <form action="/log_in" method="POST">
+                {%csrf_token%}
+                <p>Email: </p> <input type="text" name="email">
+                <p>Password: </p> <input type="text" name="password">
+                <br>
+                <button type="submit">Log In</button>
+            </form>
+        </fieldset>
+    </div>
+</body>
+
+</html>

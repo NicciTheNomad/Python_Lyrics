@@ -1,0 +1,18 @@
+* {
+}
+.quotebox {
+  width: 300px;
+  height: 200px;
+  font-family: "Times New Roman", Times, serif;
+  font: 10px;
+  border: 2px solid black;
+  padding: 2px;
+  margin: 3px;
+  /* color: red; */
+}
+.red {
+  color: salmon;
+}
+span {
+  color: salmon;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> {% load static %}
+    <link rel="stylesheet" href="{% static 'quotelists/quote.css' %}" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset class="container-fluid">
+        <legend>
+            <a href="/logout">Logout</a> {% if messages %}
+        </legend>
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        <table class="table table-bordered table-striped">
+            <legend>Welcome {{user.name}}!</legend>
+            <thead>
+                <tr>
+                    <th>
+                        Add your current favorite song lyrics and bands.
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for quote in reduced_quotes %}
+                <tr>
+                    <td>
+                        <!-- {{quote.quote_author}} -->
+                        {{quote.quote_author}}: "{{quote.quote}}"<br>
+                        <i>Posted by <a href="{{quote.quote_creator.name}}">{{quote.current.name}}</a></i><br>
+                        <a href="/quotes/{{quote.id}}/add_to_logged_user_list">Add to My List</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <fieldset>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Your Favorite Song Lyrics and Singer / Band.
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for quote in users_quotes %}
+                    <tr>
+                        <td>
+                            "{{quote.quote}}"<br>
+                            <i>Posted by <a href="{{quote.quote_creator.name}}">{{quote.current.name}}</a></i><br>
+                            <button><a href="/quotes/{{quote.id}}/remove_from_logged_user_list">Remove From My List</a></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Contribute A Quote: </legend>
+            <form action="/quotes/add" method="POST">
+                {%csrf_token%}
+                <p>Singer / Band: </p><input type="text" name="quote_author"><br>
+                <p>Lyrics: </p><input type="text" name="quote"><br>
+                <button type="submit"> Submit </button>
+            </form>
+        </fieldset>
+
+        {% comment %}
+        <fieldset>
+            <legend>Your Favorite Lyrics:</legend>
+            <table class="table table-bordered table-striped">
+                {% for quote in quotes %} {{quote.quote}}
+                <div>
+                    <i>Posted by <a href="{{quote.quote_creator.name}}">{{quote.quote_creator.name}}</a></i>
+                    <button><a href="/quotes/{{quote.id}}/remove_from_logged_user_list">Remove From My List</a></button>
+                </div>
+
+                {% endfor %}
+            </table>
+        </fieldset>
+        {% endcomment %}
+    </fieldset>
+</body>
+
+</html>

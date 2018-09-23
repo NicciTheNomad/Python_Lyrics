@@ -1,0 +1,176 @@
+*{
+}
+
+#container{
+    width: 970px;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(30, 75, 172, 0.93);
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+img{
+    width: 325px;
+}
+
+a{
+    color: yellow;
+}
+
+hr{
+    height: 4px;
+    color: #4E8DC5;
+    background-color: #4E8DC5;
+    border: none;
+    width:70%;
+}
+
+.search textarea{
+    width: 100px;
+    height: 20px;
+
+}
+
+.search div{
+    display: inline-block;
+    background-color: #2C2525;
+    width: 180px;
+    height: 40px;
+    padding: 20px 0px 0px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.search {
+    display: inline-block;
+    width: 600px;
+    text-align: right;
+}
+
+.button{
+    padding: 4px 7px 18px 7px;
+    background-color: rgba(30, 75, 172, 0.93);
+    width: 30px;
+    height: 20px;
+    color:white;
+    box-shadow: -2px -2px 3px #888888;
+}
+
+.columns{
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-align: center;
+    vertical-align: top;
+    margin: 0px 20px;
+}
+
+.columns ul{
+    list-style: square outside none;
+    margin: 0px 0px 0px 40px;  
+}
+
+.columns li{
+    color: black;
+}   
+
+.columns span{
+    color: lightskyblue;
+}
+
+.white{
+    background-color: white;
+}
+
+#nav{
+    color: white;
+    width: 730px;
+    height: 50px;
+    background-color: #4E8DC5;
+    margin: 5px auto;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#nav li{
+    display: inline;
+    padding: 0px 15px 0px 15px;
+}
+
+#main li{
+    color: yellow;
+    font: 15px;
+    font-style: italic;
+    list-style-type: none;
+}
+
+#main ul{
+    padding: 0px;
+}
+
+#header{
+    display: inline-block;
+}
+
+#links{
+    display: inline-block;
+    height: 300px;
+    width: 450px;
+    vertical-align: top;
+}
+
+#links a{
+    color: white;
+    font-size: 10px;
+    text-align: center;    
+}
+
+#main{
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+}
+
+#main li{
+    text-decoration: none;
+}
+
+#started{
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+#applications{
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-align: center;
+    vertical-align: top;
+}
+
+#footer{
+    text-align: center;
+    background: linear-gradient(blue,green);
+    color: lightskyblue;
+}
+
+#footer li{
+    display: inline;
+    list-style-type: none;
+    margin: 20px 20px 0px 20px; 
+}
+
